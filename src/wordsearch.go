@@ -62,6 +62,13 @@ func (w *WordSearch) DisplayAll() {
 	}
 }
 
+func (w *WordSearch) DisplayGrid() {
+	for _, line := range w.Grid {
+		fmt.Println(line)
+	}
+	fmt.Println()
+}
+
 func (w *WordSearch) ListWords() []string {
 	r := []string{}
 	for _, word := range w.Words {

@@ -1,6 +1,8 @@
 package src
 
-import "reflect"
+import (
+	"reflect"
+)
 
 func found() bool {
 	return reflect.DeepEqual(WordSearchGrid.ListWords(), Save)

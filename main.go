@@ -6,6 +6,6 @@ import (
 
 func main() {
 	src.WordSearchGrid.GetWordSearch()
-	src.WordSearchGrid.DisplayAll()
+	src.WordSearchGrid.DisplayGrid()
 	src.Solve(0)
 }
