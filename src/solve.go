@@ -23,9 +23,15 @@ func Solve(word int) {
 						}
 						if word == WordSearchGrid.ListWords()[0] {
 							fmt.Println("found " + word)
+							WordSearchGrid.Grid[y][x] = "\033[37m" + WordSearchGrid.Grid[y][x]
+							WordSearchGrid.Grid[y][x+count-1] += "\033[0m"
+							WordSearchGrid.DisplayAll()
 							return
 						}
-					} else if x-1 >= 0 && WordSearchGrid.Grid[y][x-1] == string(WordSearchGrid.ListWords()[0][1]) {
+						word = colums
+						// Search left.
+					}
+					if x-1 >= 0 && WordSearchGrid.Grid[y][x-1] == string(WordSearchGrid.ListWords()[0][1]) {
 						word += WordSearchGrid.Grid[y][x-1]
 						count := 2
 						fmt.Println(word + " left")
@@ -36,9 +42,15 @@ func Solve(word int) {
 						}
 						if word == WordSearchGrid.ListWords()[0] {
 							fmt.Println("found " + word)
+							WordSearchGrid.Grid[y][x-count+1] = "\033[37m" + WordSearchGrid.Grid[y][x-count+1]
+							WordSearchGrid.Grid[y][x] += "\033[0m"
+							WordSearchGrid.DisplayAll()
 							return
 						}
-					} else if y+1 < WordSearchGrid.Height && WordSearchGrid.Grid[y+1][x] == string(WordSearchGrid.ListWords()[0][1]) {
+						word = colums
+						// Search down.
+					}
+					if y+1 < WordSearchGrid.Height && WordSearchGrid.Grid[y+1][x] == string(WordSearchGrid.ListWords()[0][1]) {
 						word += WordSearchGrid.Grid[y+1][x]
 						count := 2
 						fmt.Println(word + " down")
@@ -49,9 +61,16 @@ func Solve(word int) {
 						}
 						if word == WordSearchGrid.ListWords()[0] {
 							fmt.Println("found " + word)
+							for i := 0; i < count; i++ {
+								WordSearchGrid.Grid[y+i][x] = "\033[37m" + WordSearchGrid.Grid[y+i][x] + "\033[0m"
+							}
+							WordSearchGrid.DisplayAll()
 							return
 						}
-					} else if y-1 >= 0 && WordSearchGrid.Grid[y-1][x] == string(WordSearchGrid.ListWords()[0][1]) {
+						word = colums
+						// Search up.
+					}
+					if y-1 >= 0 && WordSearchGrid.Grid[y-1][x] == string(WordSearchGrid.ListWords()[0][1]) {
 						word += WordSearchGrid.Grid[y-1][x]
 						count := 2
 						fmt.Println(word + " up")
@@ -62,6 +81,10 @@ func Solve(word int) {
 						}
 						if word == WordSearchGrid.ListWords()[0] {
 							fmt.Println("found " + word)
+							for i := 0; i < count; i++ {
+								WordSearchGrid.Grid[y-i][x] = "\033[37m" + WordSearchGrid.Grid[y-i][x] + "\033[0m"
+							}
+							WordSearchGrid.DisplayAll()
 							return
 						}
 					}
