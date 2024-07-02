@@ -2,11 +2,10 @@ package src
 
 import (
 	"fmt"
-	"time"
 )
 
 func Solve(wordCount int) {
-	time.Sleep(25 * time.Millisecond)
+	//time.Sleep(100 * time.Millisecond)
 	Clear()
 	if found() {
 		WordSearchGrid.DisplayGrid()
@@ -31,7 +30,7 @@ func Solve(wordCount int) {
 							count++
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
-							WordSearchGrid.Grid[y][x] = "\033[37m" + WordSearchGrid.Grid[y][x]
+							WordSearchGrid.Grid[y][x] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y][x]
 							WordSearchGrid.Grid[y][x+count-1] += "\033[0m"
 							WordSearchGrid.DisplayGrid()
 							Save = append(Save, word)
@@ -50,7 +49,7 @@ func Solve(wordCount int) {
 							count++
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
-							WordSearchGrid.Grid[y][x-count+1] = "\033[37m" + WordSearchGrid.Grid[y][x-count+1]
+							WordSearchGrid.Grid[y][x-count+1] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y][x-count+1]
 							WordSearchGrid.Grid[y][x] += "\033[0m"
 							WordSearchGrid.DisplayGrid()
 							Save = append(Save, word)
@@ -70,7 +69,7 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y+i][x] = "\033[37m" + WordSearchGrid.Grid[y+i][x] + "\033[0m"
+								WordSearchGrid.Grid[y+i][x] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y+i][x] + "\033[0m"
 							}
 							WordSearchGrid.DisplayGrid()
 							Save = append(Save, word)
@@ -90,7 +89,7 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y-i][x] = "\033[37m" + WordSearchGrid.Grid[y-i][x] + "\033[0m"
+								WordSearchGrid.Grid[y-i][x] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y-i][x] + "\033[0m"
 							}
 							WordSearchGrid.DisplayGrid()
 							Save = append(Save, word)
@@ -101,6 +100,12 @@ func Solve(wordCount int) {
 				}
 			}
 			if wordFound {
+				if Color == "7" {
+					Color = "1"
+					Light = "3"
+				} else {
+					Color = string(Color[0] + 1)
+				}
 				break
 			}
 		}

@@ -29,7 +29,13 @@ var WordSearchGrid WordSearch
 
 var Save []string
 
+var Color string = "1"
+
+var Light string = "9"
+
 func (w *WordSearch) GetWordSearch() {
+	Clear()
+	fmt.Println("📡 Waiting For API Response...")
 	api, _ := http.Get("https://shadify.dev/api/wordsearch/generator")
 	defer api.Body.Close()
 	data, _ := ioutil.ReadAll(api.Body)
