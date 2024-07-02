@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	wordSearch := src.WordSearch{}
-	wordSearch.GetWordSearch()
-	wordSearch.Display()
+	src.WordSearchGrid.GetWordSearch()
+	src.WordSearchGrid.DisplayAll()
+	src.Solve(0)
 }
