@@ -25,7 +25,13 @@ type Position struct {
 	End   []int `json:"end"`
 }
 
+type DisplayedGrid struct {
+	DispGrid [][]string
+}
+
 var WordSearchGrid WordSearch
+
+var CopiedGrid DisplayedGrid
 
 var Save []string
 
@@ -40,6 +46,14 @@ func (w *WordSearch) GetWordSearch() {
 	defer api.Body.Close()
 	data, _ := ioutil.ReadAll(api.Body)
 	json.Unmarshal(data, &w)
+}
+
+func (d *DisplayedGrid) CopyGrid() {
+	d.DispGrid = make([][]string, len(WordSearchGrid.Grid))
+	for i, line := range WordSearchGrid.Grid {
+		d.DispGrid[i] = make([]string, len(line))
+		copy(d.DispGrid[i], line)
+	}
 }
 
 func (w *WordSearch) StartX(i int) int {
@@ -68,8 +82,8 @@ func (w *WordSearch) DisplayAll() {
 	}
 }
 
-func (w *WordSearch) DisplayGrid() {
-	for _, line := range w.Grid {
+func (d *DisplayedGrid) DisplayGrid() {
+	for _, line := range d.DispGrid {
 		fmt.Println(line)
 	}
 	fmt.Println()

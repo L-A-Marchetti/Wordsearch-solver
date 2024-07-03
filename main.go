@@ -7,7 +7,7 @@ import (
 
 func main() {
 	src.WordSearchGrid.GetWordSearch()
-	src.WordSearchGrid.DisplayGrid()
+	src.CopiedGrid.CopyGrid()
 	defer src.TimeTrack(time.Now())
 	src.Solve(0)
 }

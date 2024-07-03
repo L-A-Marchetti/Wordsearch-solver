@@ -8,7 +8,7 @@ func Solve(wordCount int) {
 	//time.Sleep(100 * time.Millisecond)
 	Clear()
 	if found() {
-		WordSearchGrid.DisplayGrid()
+		CopiedGrid.DisplayGrid()
 		fmt.Println("Solved:\n")
 		for _, w := range Save {
 			fmt.Println(w)
@@ -31,9 +31,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y][x+i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y][x+i] + "\033[0m"
+								CopiedGrid.DispGrid[y][x+i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y][x+i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -51,9 +51,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y][x-i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y][x-i] + "\033[0m"
+								CopiedGrid.DispGrid[y][x-i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y][x-i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -71,9 +71,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y+i][x] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y+i][x] + "\033[0m"
+								CopiedGrid.DispGrid[y+i][x] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y+i][x] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -91,9 +91,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y-i][x] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y-i][x] + "\033[0m"
+								CopiedGrid.DispGrid[y-i][x] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y-i][x] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -111,9 +111,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y-i][x+i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y-i][x+i] + "\033[0m"
+								CopiedGrid.DispGrid[y-i][x+i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y-i][x+i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -131,9 +131,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y-i][x-i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y-i][x-i] + "\033[0m"
+								CopiedGrid.DispGrid[y-i][x-i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y-i][x-i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -151,9 +151,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y+i][x+i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y+i][x+i] + "\033[0m"
+								CopiedGrid.DispGrid[y+i][x+i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y+i][x+i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
@@ -171,9 +171,9 @@ func Solve(wordCount int) {
 						}
 						if word == WordSearchGrid.ListWords()[wordCount] {
 							for i := 0; i < count; i++ {
-								WordSearchGrid.Grid[y+i][x-i] = "\033[" + Light + "" + Color + "m" + WordSearchGrid.Grid[y+i][x-i] + "\033[0m"
+								CopiedGrid.DispGrid[y+i][x-i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y+i][x-i] + "\033[0m"
 							}
-							WordSearchGrid.DisplayGrid()
+							CopiedGrid.DisplayGrid()
 							Save = append(Save, word)
 							wordFound = true
 							break
