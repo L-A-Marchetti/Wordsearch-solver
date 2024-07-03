@@ -41,11 +41,12 @@ var Light string = "9"
 
 func (w *WordSearch) GetWordSearch() {
 	Clear()
-	fmt.Println("📡 Waiting For API Response...")
+	fmt.Println("📡 Waiting For API Response...\n")
 	api, _ := http.Get("https://shadify.dev/api/wordsearch/generator")
 	defer api.Body.Close()
 	data, _ := ioutil.ReadAll(api.Body)
 	json.Unmarshal(data, &w)
+	fmt.Println("🏁 Go !\n")
 }
 
 func (d *DisplayedGrid) CopyGrid() {

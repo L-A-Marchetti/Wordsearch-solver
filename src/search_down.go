@@ -13,7 +13,7 @@ func SearchDown(x, y, wordCount int, word, colums string, wordFound bool) bool {
 			for i := 0; i < count; i++ {
 				CopiedGrid.DispGrid[y+i][x] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y+i][x] + "\033[0m"
 			}
-			CopiedGrid.DisplayGrid()
+			//CopiedGrid.DisplayGrid()
 			Save = append(Save, word)
 			wordFound = true
 		}

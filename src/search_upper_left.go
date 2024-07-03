@@ -13,7 +13,7 @@ func SearchUpperLeft(x, y, wordCount int, word, colums string, wordFound bool) b
 			for i := 0; i < count; i++ {
 				CopiedGrid.DispGrid[y-i][x-i] = "\033[" + Light + "" + Color + "m" + CopiedGrid.DispGrid[y-i][x-i] + "\033[0m"
 			}
-			CopiedGrid.DisplayGrid()
+			//CopiedGrid.DisplayGrid()
 			Save = append(Save, word)
 			wordFound = true
 		}

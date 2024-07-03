@@ -1,18 +1,8 @@
 package src
 
-import (
-	"fmt"
-)
-
 func Solve(wordCount int) {
-	//time.Sleep(100 * time.Millisecond)
-	Clear()
+	//Clear()
 	if found() {
-		CopiedGrid.DisplayGrid()
-		fmt.Println("Solved:\n")
-		for _, w := range Save {
-			fmt.Println(w)
-		}
 		return
 	} else {
 		wordFound := false
