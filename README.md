@@ -1,10 +1,10 @@
-# SearchWord Solver
+# WordSearch Solver
 
-![SearchWord Solver Logo](example.png)
+![WordSearch Solver Logo](example.png)
 
 ## Overview
 
-SearchWord Solver is a Go application designed to solve word search puzzles efficiently. It fetches a word search puzzle from an API and then searches for words in multiple directions. When a word is found, it highlights it in the grid using ANSI color codes.
+WordSearch Solver is a Go application designed to solve word search puzzles efficiently. It fetches a word search puzzle from an API and then searches for words in multiple directions. When a word is found, it highlights it in the grid using ANSI color codes.
 
 ## Features
 
@@ -23,12 +23,12 @@ SearchWord Solver is a Go application designed to solve word search puzzles effi
 
 ## Installation
 
-To run the SearchWord Solver, you need to have Go installed on your machine. Follow these steps to install and run the application:
+To run the WordSearch Solver, you need to have Go installed on your machine. Follow these steps to install and run the application:
 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/SearchWordSolver.git
+   git clone https://github.com/L-A-Marchetti/Wordsearch-solver.git
    cd SearchWordSolver
    ```
 
